@@ -4,3 +4,41 @@
   font-size: 0;
   box-sizing: content-box;
 }
+
+main {
+  height: 890px;
+}
+
+.container {
+  height: 90%;
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: 1fr 200px;
+}
+
+.main {
+  background: url(./assets/your_verse_hero.jpg) 50% 100% no-repeat;
+  grid-column: 1 / -1;
+  grid-row: 1 / span 1;
+}
+
+.iphone5s {
+  background: url(./assets/promo_iphone5s.jpg) 50%;
+}
+
+.iphone5c {
+  background: url(./assets/promo_iphone5c.jpg) 50%;
+}
+
+.happy-birthday {
+  background: url(./assets/promo_30_years.jpg) 50%;
+}
+
+.supplier {
+  background: url(./assets/promo_supplier_responsibility.jpg) 50%;
+}
+
+footer {
+  
+}
