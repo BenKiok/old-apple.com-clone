@@ -1,26 +1,121 @@
+:root {
+  --nav-background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, .2)), color-stop(0.05, rgba(0, 0, 0, 0)), color-stop(0.97, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, .45))), -webkit-gradient(linear, 0 0, 100% 0, from(rgba(0, 0, 0, .2)), color-stop(0.002, rgba(0, 0, 0, 0)), color-stop(0.998, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, .2))), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA9QAAAAkCAMAAABfcIIyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHVQTFRFAAAA%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F5YtmQAAAACd0Uk5TAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmZiD6WAAAAdlJREFUeF7t3btuFEEQheFzunotGYkIERA4spn3fyeHiAgEEtsXB82s2eEJavR%2F0Wjyo75XWfHpw4MkSXNqCkA2lr2%2B%2Fvz63n15qpI0x5yTSAM52XaxJLVXf%2FkoaY6xQk2sgXy8Ql2KJf3wS5HG6HMMQg3kZNkuxVGKNLxJo48%2BxhxTpBrIx7JcXEqUKJI3zd77CjWLaiAle4U6Iixv6q33MfocTL%2BBlCy7OEqJqCFvs%2FV2m3%2BTaiAd6zb7rlHtrbc1VA%2Bm30BSa%2B%2B7RNSo4a21thbVTL%2BBnCy7rCV1rdXbtbXW%2B%2Bh%2Ft78BZLM2v6NE1Fov%2FrpC3Zl%2BA2l5H6lrrRe%2FXNu%2BqCbUQE57qGvsoW5t9D4H028gJculOKLUWuvFz%2B16O9NipAZSsm8nWpfq53ZlTQ3k9s%2BamlADZ0CogZMh1MDJEGrgZAg1cDL%2Fh5ojLSC1%2ByMtLp8A2R0un3BNFEjv%2FpooDzqA9O4fdPD0Esju8PSSIglAdsciCZQzArI7lDOat30yCg8CGe2FB1eovZcI7oMSwUBSq0TwWlQHxfyBEzgW86ftDpDase0ODfKA7A4N8mhlC2R318r2px%2BeQqLpPJDae9P5%2FmrVz491%2FWekBlKy7PXVfn9rb9xXsMD2wdOcAAAAAElFTkSuQmCC') no-repeat 50% 50%, -webkit-gradient(linear, 0 100%, 0 0, from(#666), color-stop(0.5, #5e5e5e), color-stop(0.51, #707070), to(#808080));
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-size: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 main {
-  height: 890px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(auto, 1440px);
+  grid-template-rows: 1fr 90px;
+  justify-content: center;
 }
 
 .container {
-  height: 90%;
+  height: 100%;
   display: grid;
   gap: 2px;
   grid-template-columns: repeat(4, auto);
-  grid-template-rows: 1fr 200px;
+  grid-template-rows: 598px 200px;
+}
+
+.container > div:not(.main) {
+  cursor: pointer;
 }
 
 .main {
   background: url(./assets/your_verse_hero.jpg) 50% 100% no-repeat;
   grid-column: 1 / -1;
   grid-row: 1 / span 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  height: 36px;
+  width: 980px;
+  margin: 90px 35px 0 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background: var(--nav-background);
+}
+
+nav a {
+  height: 100%;
+  flex: 0 1 105px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  color: #fff;
+  border-right: 1px solid #464646;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .fa-apple {
+  font-size: 20px;
+}
+
+nav input {
+  width: 106px;
+  border-radius: 25px;
+  border: none;
+  background: url(./assets/search-icon.svg) 5px 3px no-repeat, 
+              var(--nav-background);
+  box-shadow: 0 1px 1px 1px inset #2e2e2e,
+              0 -1px inset #969696;
+  transition: background 0.2s linear 0s,
+              box-shadow 0.2s linear 0s,
+              width 0.2s linear 0s;
+  font-size: 13px;
+  padding: 1px 3px 2px 22px;
+  margin: 0 17px;
+}
+
+nav input:focus {
+  outline: none;
+  width: 170px;
+  background: url(./assets/search-icon-focused.svg) 5px 3px no-repeat,
+            #fff;
+  box-shadow: 0 -1px #616161;
+  border: 1px solid #5e5e5e;
+}
+
+.heading {
+  height: 95px;
+  width: 640px;
+  background: url(./assets/your_verse_title_small.png) 50% 0;
+  margin-top: 60px;
+  cursor: pointer;
+}
+
+.subheading {
+  height: 82px;
+  width: 800px;
+  background: url(./assets/your_verse_subhead_small.png) 50% 0;
+  cursor: pointer;
+}
+
+.video-link {
+  height: 30px;
+  width: 560px;
+  background: url(./assets/cta_your_verse_27pt.png) 50% 0;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.video-link:hover {
+  background-position: 50% 95%;
 }
 
 .iphone5s {
@@ -40,5 +135,43 @@ main {
 }
 
 footer {
-  
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.left, .right {
+  color: #6e6e6e;
+  font-size: 10px;
+  padding-top: 25px;
+}
+
+.left {
+  padding-right: 70px;
+}
+
+.right {
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+footer a {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+.link-spacing {
+  padding-right: 6px;
+  border-right: 1px solid #ccc;
+  margin-right: 4px;
+}
+
+footer p {
+  padding-bottom: 15px;
+}
+
+.country {
+  width: 16px;
+  height: 16px;
 }
